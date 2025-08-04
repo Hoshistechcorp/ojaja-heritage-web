@@ -1,10 +1,30 @@
 import { Card } from "@/components/ui/card";
 import { MapPin, Mail, Building } from "lucide-react";
+import familyImage from "@/assets/family-lifestyle.jpg";
+import heritageImage from "@/assets/african-heritage.jpg";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 px-6 bg-ojaja-light">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-20 px-6 bg-ojaja-light relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-10">
+        <img 
+          src={heritageImage} 
+          alt="African Heritage Background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Family Lifestyle Image */}
+        <div className="mb-16">
+          <img 
+            src={familyImage} 
+            alt="Happy African family enjoying Ojaja drinks" 
+            className="w-full max-w-4xl mx-auto rounded-3xl shadow-ojaja"
+          />
+        </div>
+        
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-4xl md:text-5xl text-ojaja-pink mb-6">
             Rooted in Royalty, Crafted for Wellness

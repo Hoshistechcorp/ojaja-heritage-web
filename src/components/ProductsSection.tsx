@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Clock, Crown } from "lucide-react";
 import productsImage from "@/assets/products-showcase.jpg";
+import splashImage from "@/assets/splash-drinks.jpg";
 
 const ProductsSection = () => {
   const products = [
@@ -62,13 +63,22 @@ const ProductsSection = () => {
             combining traditional wisdom with modern nutritional science.
           </p>
           
-          {/* Featured Products Image */}
-          <div className="mb-16">
-            <img 
-              src={productsImage} 
-              alt="Ojaja Drinks Product Collection" 
-              className="w-full max-w-4xl mx-auto rounded-2xl shadow-warm"
-            />
+          {/* Featured Products Images */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            <div>
+              <img 
+                src={productsImage} 
+                alt="Ojaja Drinks Product Collection" 
+                className="w-full h-[300px] object-cover rounded-2xl shadow-soft"
+              />
+            </div>
+            <div>
+              <img 
+                src={splashImage} 
+                alt="Dynamic beverage splash photography" 
+                className="w-full h-[300px] object-cover rounded-2xl shadow-soft"
+              />
+            </div>
           </div>
         </div>
 

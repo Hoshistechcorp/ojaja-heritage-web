@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Zap, Shield, Heart, Sun } from "lucide-react";
+import ingredientsImage from "@/assets/fresh-ingredients.jpg";
 
 const IngredientsSection = () => {
   const ingredients = [
@@ -34,8 +35,18 @@ const IngredientsSection = () => {
   ];
 
   return (
-    <section id="ingredients" className="py-20 px-6 bg-gradient-fresh text-white">
-      <div className="max-w-6xl mx-auto">
+    <section id="ingredients" className="py-20 px-6 bg-gradient-fresh text-white relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <img 
+          src={ingredientsImage} 
+          alt="Fresh African ingredients" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-fresh/80"></div>
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-4xl md:text-5xl mb-6">
             Ingredients & Benefits

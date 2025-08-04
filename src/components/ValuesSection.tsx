@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Heart, Leaf, Lightbulb, Crown } from "lucide-react";
+import wellnessImage from "@/assets/wellness-hands.jpg";
 
 const ValuesSection = () => {
   const values = [
@@ -32,15 +33,27 @@ const ValuesSection = () => {
   return (
     <section className="py-20 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl md:text-5xl text-ojaja-pink mb-6">
-            Our Core Values
-          </h2>
-          <div className="w-24 h-1 bg-ojaja-orange mx-auto mb-8"></div>
-          <p className="text-xl text-foreground max-w-3xl mx-auto">
-            Every bottle of Ojaja Drinks embodies our commitment to excellence, 
-            heritage, and the well-being of African families.
-          </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left Content */}
+          <div>
+            <h2 className="font-heading font-bold text-4xl md:text-5xl text-ojaja-pink mb-6">
+              Our Core Values
+            </h2>
+            <div className="w-24 h-1 bg-ojaja-orange mb-8"></div>
+            <p className="text-xl text-foreground">
+              Every bottle of Ojaja Drinks embodies our commitment to excellence, 
+              heritage, and the well-being of African families.
+            </p>
+          </div>
+          
+          {/* Right Image */}
+          <div className="animate-fade-in">
+            <img 
+              src={wellnessImage} 
+              alt="Wellness and healthy lifestyle" 
+              className="w-full h-[400px] object-cover rounded-2xl shadow-soft"
+            />
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

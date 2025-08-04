@@ -1,5 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Globe, Leaf, Star, Award, Heart } from "lucide-react";
+import patternBg from "@/assets/pattern-bg.jpg";
+import peopleImage from "@/assets/people-enjoying.jpg";
 
 const DifferentiatorsSection = () => {
   const differentiators = [
@@ -36,8 +38,17 @@ const DifferentiatorsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-6 bg-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <img 
+          src={patternBg} 
+          alt="African pattern background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-4xl md:text-5xl text-ojaja-pink mb-6">
             What Makes Us Unique
@@ -63,31 +74,43 @@ const DifferentiatorsSection = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <Card className="p-12 bg-gradient-ojaja text-white">
-            <h3 className="font-heading font-bold text-3xl mb-6">
-              Experience the Ojaja Difference
-            </h3>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join thousands of families who have discovered the perfect blend of tradition, 
-              taste, and wellness in every bottle of Ojaja Drinks.
-            </p>
-            <div className="flex flex-wrap justify-center gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-white">50+</div>
-                <div className="text-white/80">Premium Ingredients</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white">100%</div>
-                <div className="text-white/80">Natural Products</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white">1000+</div>
-                <div className="text-white/80">Happy Families</div>
-              </div>
+        {/* Call to Action with Image */}
+        <div className="mt-16">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Left - Fun Image */}
+            <div className="animate-fade-in">
+              <img 
+                src={peopleImage} 
+                alt="People enjoying Ojaja drinks" 
+                className="w-full h-[300px] object-cover rounded-2xl shadow-ojaja"
+              />
             </div>
-          </Card>
+            
+            {/* Right - Call to Action */}
+            <Card className="p-8 bg-gradient-ojaja text-white">
+              <h3 className="font-heading font-bold text-3xl mb-6">
+                Experience the Ojaja Difference
+              </h3>
+              <p className="text-xl text-white/90 mb-8">
+                Join thousands of families who have discovered the perfect blend of tradition, 
+                taste, and wellness in every bottle of Ojaja Drinks.
+              </p>
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="text-2xl font-bold text-white">50+</div>
+                  <div className="text-white/80 text-sm">Premium Ingredients</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-white">100%</div>
+                  <div className="text-white/80 text-sm">Natural Products</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-white">1000+</div>
+                  <div className="text-white/80 text-sm">Happy Families</div>
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
