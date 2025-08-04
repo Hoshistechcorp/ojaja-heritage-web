@@ -50,14 +50,14 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-background">
+    <section id="products" className="py-20 px-6 bg-ojaja-light">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl md:text-5xl text-african-green mb-6">
+          <h2 className="font-heading font-bold text-4xl md:text-5xl text-ojaja-pink mb-6">
             Our Premium Collection
           </h2>
-          <div className="w-24 h-1 bg-royal-gold mx-auto mb-8"></div>
-          <p className="text-xl text-earth-brown max-w-3xl mx-auto mb-12">
+          <div className="w-24 h-1 bg-ojaja-orange mx-auto mb-8"></div>
+          <p className="text-xl text-foreground max-w-3xl mx-auto mb-12">
             Each drink in our collection is carefully crafted using authentic African ingredients, 
             combining traditional wisdom with modern nutritional science.
           </p>
@@ -74,37 +74,37 @@ const ProductsSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map((product, index) => (
-            <Card key={index} className="p-6 shadow-warm hover:shadow-african transition-all duration-300 group relative overflow-hidden">
+            <Card key={index} className="p-6 shadow-soft hover:shadow-ojaja transition-all duration-300 group relative overflow-hidden bg-white">
               {/* Cultural Pride Badge */}
-              <Badge className="absolute top-4 right-4 bg-african-green text-white">
+              <Badge className="absolute top-4 right-4 bg-ojaja-pink text-white">
                 <Sparkles className="w-3 h-3 mr-1" />
                 Cultural Pride
               </Badge>
               
               {product.comingSoon && (
-                <Badge className="absolute top-4 left-4 bg-royal-gold text-earth-brown">
+                <Badge className="absolute top-4 left-4 bg-ojaja-orange text-white">
                   <Clock className="w-3 h-3 mr-1" />
                   Coming Soon
                 </Badge>
               )}
 
               <div className="mt-8">
-                <h3 className="font-heading font-bold text-xl text-african-green mb-3 group-hover:text-royal-gold transition-colors">
+                <h3 className="font-heading font-bold text-xl text-ojaja-blue mb-3 group-hover:text-ojaja-pink transition-colors">
                   {product.name}
                 </h3>
-                <p className="text-earth-brown mb-4 leading-relaxed">
+                <p className="text-foreground mb-4 leading-relaxed">
                   {product.description}
                 </p>
                 
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-sm text-african-green uppercase tracking-wide">
+                  <h4 className="font-semibold text-sm text-ojaja-blue uppercase tracking-wide">
                     Health Benefits:
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {product.benefits.map((benefit, idx) => (
                       <span 
                         key={idx}
-                        className="text-xs bg-african-green/10 text-african-green px-2 py-1 rounded-full"
+                        className="text-xs bg-ojaja-blue/10 text-ojaja-blue px-2 py-1 rounded-full"
                       >
                         {benefit}
                       </span>
@@ -120,22 +120,22 @@ const ProductsSection = () => {
         <div className="mt-16 text-center">
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="p-6">
-              <div className="w-12 h-12 bg-african-green rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-ojaja-green rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">100%</span>
               </div>
-              <p className="font-semibold text-african-green">African-Sourced Ingredients</p>
+              <p className="font-semibold text-ojaja-green">African-Sourced Ingredients</p>
             </div>
             <div className="p-6">
-              <div className="w-12 h-12 bg-royal-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-earth-brown font-bold text-xl">0</span>
+              <div className="w-12 h-12 bg-ojaja-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white font-bold text-xl">0</span>
               </div>
-              <p className="font-semibold text-african-green">Artificial Preservatives</p>
+              <p className="font-semibold text-ojaja-orange">Artificial Preservatives</p>
             </div>
             <div className="p-6">
-              <div className="w-12 h-12 bg-terracotta rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-ojaja-pink rounded-full flex items-center justify-center mx-auto mb-4">
                 <Crown className="w-6 h-6 text-white" />
               </div>
-              <p className="font-semibold text-african-green">Royal Heritage Quality</p>
+              <p className="font-semibold text-ojaja-pink">Royal Heritage Quality</p>
             </div>
           </div>
         </div>

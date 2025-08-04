@@ -62,21 +62,21 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'african-green': 'hsl(var(--african-green))',
-				'royal-gold': 'hsl(var(--royal-gold))',
-				'terracotta': 'hsl(var(--terracotta))',
-				'cream': 'hsl(var(--cream))',
-				'earth-brown': 'hsl(var(--earth-brown))'
+				'ojaja-pink': 'hsl(var(--ojaja-pink))',
+				'ojaja-blue': 'hsl(var(--ojaja-blue))',
+				'ojaja-green': 'hsl(var(--ojaja-green))',
+				'ojaja-orange': 'hsl(var(--ojaja-orange))',
+				'ojaja-light': 'hsl(var(--ojaja-light))'
 			},
 			backgroundImage: {
-				'gradient-african': 'var(--gradient-african)',
-				'gradient-warm': 'var(--gradient-warm)',
-				'gradient-heritage': 'var(--gradient-heritage)'
+				'gradient-ojaja': 'linear-gradient(135deg, hsl(var(--ojaja-pink)), hsl(var(--ojaja-orange)))',
+				'gradient-water': 'linear-gradient(180deg, hsl(var(--ojaja-blue)), hsl(var(--ojaja-light)))',
+				'gradient-fresh': 'linear-gradient(45deg, hsl(var(--ojaja-green)), hsl(var(--ojaja-blue)))'
 			},
 			boxShadow: {
-				'african': 'var(--shadow-african)',
-				'gold': 'var(--shadow-gold)',
-				'warm': 'var(--shadow-warm)'
+				'ojaja': '0 10px 30px -10px hsl(var(--ojaja-pink) / 0.3)',
+				'blue': '0 4px 20px hsl(var(--ojaja-blue) / 0.4)',
+				'soft': '0 8px 25px -8px hsl(220 13% 18% / 0.15)'
 			},
 			fontFamily: {
 				'heading': ['Montserrat', 'sans-serif'],

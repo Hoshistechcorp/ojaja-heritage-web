@@ -8,41 +8,41 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Ojaja Drinks African Heritage Color Palette */
-    --background: 48 25% 97%; /* Cream/off-white (#F8F5F0) */
-    --foreground: 15 25% 15%; /* Dark brown (#3E2723) */
+    /* Ojaja Drinks Brand Color Palette */
+    --background: 0 0% 100%; /* Pure white */
+    --foreground: 220 13% 18%; /* Dark gray */
 
-    --card: 48 25% 97%;
-    --card-foreground: 15 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
 
-    --popover: 48 25% 97%;
-    --popover-foreground: 15 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
 
-    --primary: 122 45% 33%; /* Deep earthy green (#2E7D32) */
+    --primary: 321 100% 54%; /* Ojaja Pink/Magenta (#DE1F80) */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 43 77% 52%; /* Royal gold (#D4AF37) */
-    --secondary-foreground: 15 25% 15%;
+    --secondary: 210 65% 32%; /* Ojaja Blue (#185996) */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 48 20% 90%;
-    --muted-foreground: 15 15% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 14 88% 50%; /* Terracotta orange (#E64A19) */
+    --accent: 16 91% 55%; /* Ojaja Orange (#F16224) */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 48 15% 85%;
-    --input: 48 15% 85%;
-    --ring: 122 45% 33%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 321 100% 54%;
 
-    /* Custom Ojaja Colors */
-    --african-green: 122 45% 33%;
-    --royal-gold: 43 77% 52%;
-    --terracotta: 14 88% 50%;
-    --cream: 48 25% 97%;
-    --earth-brown: 15 25% 15%;
+    /* Custom Ojaja Brand Colors */
+    --ojaja-pink: 321 100% 54%; /* Main brand color */
+    --ojaja-blue: 210 65% 32%; /* Water variant */
+    --ojaja-green: 151 65% 32%; /* Bitters variant */
+    --ojaja-orange: 16 91% 55%; /* Orange variant */
+    --ojaja-light: 210 40% 98%;
 
     /* Gradients */
     --gradient-african: linear-gradient(135deg, hsl(var(--african-green)), hsl(var(--royal-gold)));
