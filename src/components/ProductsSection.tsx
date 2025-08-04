@@ -1,8 +1,18 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Clock, Crown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sparkles, Clock, Crown, Heart, Star } from "lucide-react";
 import productsImage from "@/assets/products-showcase.jpg";
 import splashImage from "@/assets/splash-drinks.jpg";
+
+// Individual product images
+import colaImage from "@/assets/products/ojaja-cola.jpg";
+import bittersImage from "@/assets/products/ojaja-bitters.jpg";
+import gingerHoneyImage from "@/assets/products/ginger-lemon-honey.jpg";
+import whiskyColaImage from "@/assets/products/whisky-cola.jpg";
+import gingerVodkaImage from "@/assets/products/ginger-vodka.jpg";
+import orangeImage from "@/assets/products/orange-drink.jpg";
+import waterImage from "@/assets/products/ojaja-water.jpg";
 
 const ProductsSection = () => {
   const products = [
@@ -10,43 +20,64 @@ const ProductsSection = () => {
       name: "Ojaja Cola",
       description: "Classic fizz with kola nut twist",
       benefits: ["Antioxidants", "Natural Caffeine", "African Heritage"],
-      comingSoon: false
+      comingSoon: false,
+      image: colaImage,
+      color: "bg-gradient-to-br from-amber-100 to-amber-200",
+      rating: 4.8
     },
     {
       name: "Ojaja Bitters",
       description: "Herbal detox rooted in tradition",
       benefits: ["Digestive Aid", "Liver Support", "Herbal Blend"],
-      comingSoon: false
+      comingSoon: false,
+      image: bittersImage,
+      color: "bg-gradient-to-br from-green-100 to-green-200",
+      rating: 4.9
     },
     {
       name: "Ginger Lemon Honey",
       description: "Immune-boosting golden elixir",
       benefits: ["Anti-inflammatory", "Vitamin C", "Natural Honey"],
-      comingSoon: false
+      comingSoon: false,
+      image: gingerHoneyImage,
+      color: "bg-gradient-to-br from-yellow-100 to-orange-200",
+      rating: 4.7
     },
     {
       name: "Whisky Cola",
       description: "Non-alcoholic sophistication",
       benefits: ["Rich Flavor", "Zero Alcohol", "Premium Taste"],
-      comingSoon: false
+      comingSoon: false,
+      image: whiskyColaImage,
+      color: "bg-gradient-to-br from-amber-200 to-brown-200",
+      rating: 4.6
     },
     {
       name: "Ginger Vodka",
       description: "Spicy-smooth celebration",
       benefits: ["Ginger Heat", "Smooth Finish", "Social Drink"],
-      comingSoon: false
+      comingSoon: false,
+      image: gingerVodkaImage,
+      color: "bg-gradient-to-br from-blue-100 to-blue-200",
+      rating: 4.5
     },
     {
       name: "Orange",
       description: "Vitamin-rich African citrus",
       benefits: ["Vitamin C", "Fresh Citrus", "Natural Fruit"],
-      comingSoon: false
+      comingSoon: false,
+      image: orangeImage,
+      color: "bg-gradient-to-br from-orange-100 to-orange-300",
+      rating: 4.8
     },
     {
       name: "Ojaja Water",
       description: "Pure African spring water",
       benefits: ["Pure H2O", "Mineral Rich", "Refreshing"],
-      comingSoon: true
+      comingSoon: true,
+      image: waterImage,
+      color: "bg-gradient-to-br from-blue-50 to-blue-100",
+      rating: null
     }
   ];
 
@@ -82,70 +113,120 @@ const ProductsSection = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {/* Product Grid - Enhanced */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {products.map((product, index) => (
-            <Card key={index} className="p-6 shadow-soft hover:shadow-ojaja transition-all duration-300 group relative overflow-hidden bg-white">
-              {/* Cultural Pride Badge */}
-              <Badge className="absolute top-4 right-4 bg-ojaja-pink text-white">
-                <Sparkles className="w-3 h-3 mr-1" />
-                Cultural Pride
-              </Badge>
-              
-              {product.comingSoon && (
-                <Badge className="absolute top-4 left-4 bg-ojaja-orange text-white">
-                  <Clock className="w-3 h-3 mr-1" />
-                  Coming Soon
-                </Badge>
-              )}
+            <Card key={index} className={`group relative overflow-hidden border-0 shadow-soft hover:shadow-ojaja transition-all duration-500 transform hover:-translate-y-2 ${product.color}`}>
+              {/* Product Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                
+                {/* Badges */}
+                <div className="absolute top-3 right-3">
+                  <Badge className="bg-ojaja-pink text-white shadow-lg">
+                    <Sparkles className="w-3 h-3 mr-1" />
+                    Cultural Pride
+                  </Badge>
+                </div>
+                
+                {product.comingSoon && (
+                  <div className="absolute top-3 left-3">
+                    <Badge className="bg-ojaja-orange text-white shadow-lg">
+                      <Clock className="w-3 h-3 mr-1" />
+                      Coming Soon
+                    </Badge>
+                  </div>
+                )}
 
-              <div className="mt-8">
-                <h3 className="font-heading font-bold text-xl text-ojaja-blue mb-3 group-hover:text-ojaja-pink transition-colors">
+                {/* Rating */}
+                {product.rating && (
+                  <div className="absolute bottom-3 left-3 flex items-center bg-white/90 rounded-full px-2 py-1">
+                    <Star className="w-3 h-3 text-yellow-500 fill-current mr-1" />
+                    <span className="text-xs font-semibold">{product.rating}</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Product Info */}
+              <div className="p-6">
+                <h3 className="font-heading font-bold text-xl text-ojaja-blue mb-2 group-hover:text-ojaja-pink transition-colors">
                   {product.name}
                 </h3>
-                <p className="text-foreground mb-4 leading-relaxed">
+                <p className="text-foreground/80 mb-4 text-sm leading-relaxed">
                   {product.description}
                 </p>
                 
-                <div className="space-y-2">
-                  <h4 className="font-semibold text-sm text-ojaja-blue uppercase tracking-wide">
+                {/* Health Benefits */}
+                <div className="space-y-3 mb-4">
+                  <h4 className="font-semibold text-xs text-ojaja-blue uppercase tracking-wide flex items-center">
+                    <Heart className="w-3 h-3 mr-1" />
                     Health Benefits:
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1">
                     {product.benefits.map((benefit, idx) => (
                       <span 
                         key={idx}
-                        className="text-xs bg-ojaja-blue/10 text-ojaja-blue px-2 py-1 rounded-full"
+                        className="text-xs bg-white/80 text-ojaja-blue px-2 py-1 rounded-full border border-ojaja-blue/20"
                       >
                         {benefit}
                       </span>
                     ))}
                   </div>
                 </div>
+
+                {/* Action Button */}
+                <Button 
+                  variant={product.comingSoon ? "outline" : "default"}
+                  className={`w-full ${
+                    product.comingSoon 
+                      ? "border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white" 
+                      : "bg-ojaja-blue hover:bg-ojaja-pink text-white"
+                  } transition-colors`}
+                  disabled={product.comingSoon}
+                >
+                  {product.comingSoon ? "Notify Me" : "Learn More"}
+                </Button>
               </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-ojaja-pink/0 to-ojaja-pink/0 group-hover:from-ojaja-pink/10 group-hover:to-transparent transition-all duration-300 pointer-events-none"></div>
             </Card>
           ))}
         </div>
 
-        {/* Trust Indicators */}
-        <div className="mt-16 text-center">
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="p-6">
-              <div className="w-12 h-12 bg-ojaja-green rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">100%</span>
+        {/* Enhanced Trust Indicators */}
+        <div className="mt-20 text-center">
+          <h3 className="font-heading font-bold text-2xl text-ojaja-pink mb-8">
+            Why Choose Ojaja Drinks?
+          </h3>
+          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="p-6 bg-white rounded-2xl shadow-soft hover:shadow-ojaja transition-all duration-300 group">
+              <div className="w-16 h-16 bg-ojaja-green rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <span className="text-white font-bold text-2xl">100%</span>
               </div>
-              <p className="font-semibold text-ojaja-green">African-Sourced Ingredients</p>
+              <p className="font-semibold text-ojaja-green text-sm">African-Sourced Ingredients</p>
             </div>
-            <div className="p-6">
-              <div className="w-12 h-12 bg-ojaja-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-xl">0</span>
+            <div className="p-6 bg-white rounded-2xl shadow-soft hover:shadow-ojaja transition-all duration-300 group">
+              <div className="w-16 h-16 bg-ojaja-orange rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <span className="text-white font-bold text-2xl">0</span>
               </div>
-              <p className="font-semibold text-ojaja-orange">Artificial Preservatives</p>
+              <p className="font-semibold text-ojaja-orange text-sm">Artificial Preservatives</p>
             </div>
-            <div className="p-6">
-              <div className="w-12 h-12 bg-ojaja-pink rounded-full flex items-center justify-center mx-auto mb-4">
-                <Crown className="w-6 h-6 text-white" />
+            <div className="p-6 bg-white rounded-2xl shadow-soft hover:shadow-ojaja transition-all duration-300 group">
+              <div className="w-16 h-16 bg-ojaja-pink rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Crown className="w-8 h-8 text-white" />
               </div>
-              <p className="font-semibold text-ojaja-pink">Royal Heritage Quality</p>
+              <p className="font-semibold text-ojaja-pink text-sm">Royal Heritage Quality</p>
+            </div>
+            <div className="p-6 bg-white rounded-2xl shadow-soft hover:shadow-ojaja transition-all duration-300 group">
+              <div className="w-16 h-16 bg-ojaja-blue rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Heart className="w-8 h-8 text-white" />
+              </div>
+              <p className="font-semibold text-ojaja-blue text-sm">Family Wellness Focus</p>
             </div>
           </div>
         </div>
