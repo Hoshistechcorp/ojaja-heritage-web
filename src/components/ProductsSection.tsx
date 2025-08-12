@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Clock, Crown, Heart, Star } from "lucide-react";
+import ProductModal from "@/components/ProductModal";
 import productsImage from "@/assets/products-showcase.jpg";
 import splashImage from "@/assets/splash-drinks.jpg";
 
@@ -179,17 +180,23 @@ const ProductsSection = () => {
                 </div>
 
                 {/* Action Button */}
-                <Button 
-                  variant={product.comingSoon ? "outline" : "default"}
-                  className={`w-full ${
-                    product.comingSoon 
-                      ? "border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white" 
-                      : "bg-ojaja-blue hover:bg-ojaja-pink text-white"
-                  } transition-colors`}
-                  disabled={product.comingSoon}
-                >
-                  {product.comingSoon ? "Notify Me" : "Learn More"}
-                </Button>
+                {product.comingSoon ? (
+                  <Button 
+                    variant="outline"
+                    className="w-full border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white transition-colors"
+                    disabled
+                  >
+                    Notify Me
+                  </Button>
+                ) : (
+                  <ProductModal product={product}>
+                    <Button 
+                      className="w-full bg-ojaja-blue hover:bg-ojaja-pink text-white transition-colors"
+                    >
+                      Learn More
+                    </Button>
+                  </ProductModal>
+                )}
               </div>
 
               {/* Hover Overlay */}
