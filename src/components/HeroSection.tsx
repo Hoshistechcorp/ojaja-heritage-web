@@ -57,7 +57,7 @@ const HeroSection = () => {
                 className="bg-gradient-to-r from-ojaja-orange to-ojaja-pink hover:shadow-elegant text-white font-semibold px-8 py-6 text-lg rounded-full group"
               >
                 <ShoppingCart className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                Shop Collection
+                Become a Distributor
               </Button>
               <VideoModal
                 videoUrl="https://drive.google.com/file/d/1VwsboDByEuY5he4qo9LjndVsPPb2ODhc/preview"

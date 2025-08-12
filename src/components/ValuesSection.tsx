@@ -65,9 +65,47 @@ const ValuesSection = () => {
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 {value.description}
-              </p>
+             </p>
             </Card>
           ))}
+        </div>
+
+        {/* Vision & Mission Statement */}
+        <div className="mt-20 bg-gradient-to-br from-ojaja-light via-white to-ojaja-light rounded-3xl p-12">
+          <div className="text-center mb-12">
+            <h2 className="font-heading font-bold text-4xl md:text-5xl text-ojaja-pink mb-6">
+              Vision & Mission Statement
+            </h2>
+            <div className="w-24 h-1 bg-ojaja-orange mx-auto"></div>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {/* Vision */}
+            <div className="text-center lg:text-left">
+              <h3 className="font-heading font-bold text-2xl text-ojaja-blue mb-6 flex items-center justify-center lg:justify-start">
+                <Crown className="w-8 h-8 mr-3 text-ojaja-pink" />
+                Our Vision
+              </h3>
+              <p className="text-lg text-foreground leading-relaxed">
+                To become the leading Pan African brand promoting health, tradition, and 
+                innovation on a global scale.
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="text-center lg:text-left">
+              <h3 className="font-heading font-bold text-2xl text-ojaja-blue mb-6 flex items-center justify-center lg:justify-start">
+                <Heart className="w-8 h-8 mr-3 text-ojaja-orange" />
+                Our Mission
+              </h3>
+              <p className="text-lg text-foreground leading-relaxed">
+                To revitalize families and communities worldwide by offering beverages 
+                made from high-quality, locally sourced African ingredients — using 
+                sustainable methods and innovative formulations that promote wellness 
+                and cultural pride.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
