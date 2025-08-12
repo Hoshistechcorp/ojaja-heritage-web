@@ -60,7 +60,7 @@ const HeroSection = () => {
                 Shop Collection
               </Button>
               <VideoModal
-                videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with actual video URL
+                videoUrl="https://drive.google.com/file/d/1VwsboDByEuY5he4qo9LjndVsPPb2ODhc/preview"
                 thumbnailUrl={storyThumbnail}
                 title="Ojaja Drinks - Our Story"
                 buttonText="Watch Our Story"
