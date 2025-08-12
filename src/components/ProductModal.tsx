@@ -53,6 +53,40 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
           closingStatement: "Ojaja Cola – It's not just a drink, it's a cultural experience in a bottle."
         };
       
+      case "Orange":
+        return {
+          tagline: "Bursting with Citrus. Rooted in Africa.",
+          subtitle: "Sunshine in Every Sip",
+          mainDescription: "Ojaja Orange delivers a zesty splash of real orange flavor blended with the natural vitality of African citrus fruits. It's not just refreshing — it's rejuvenating, packed with nutrients and designed to uplift your day with every fizzy, fruity gulp.",
+          features: [
+            "Vitamin-rich, zesty citrus soda",
+            "Available in PET bottle & can"
+          ],
+          specialFeatures: [
+            {
+              icon: Heart,
+              title: "Real Orange Juice Extract",
+              description: "Rich in Vitamin C for immune support"
+            },
+            {
+              icon: Zap,
+              title: "African Citrus Zest", 
+              description: "Adds boldness and a tangy edge"
+            },
+            {
+              icon: Sparkles,
+              title: "Lightly Sparkling",
+              description: "Crisp, smooth, and not overly sweet"
+            }
+          ],
+          perfectFor: [
+            "Hot afternoons and beach vibes",
+            "A nutritious soda alternative",
+            "Kids, adults — the whole family!"
+          ],
+          closingStatement: "Ojaja Orange – Bright, Bold, and Proudly African."
+        };
+
       default:
         return {
           tagline: "Premium African Beverage",
