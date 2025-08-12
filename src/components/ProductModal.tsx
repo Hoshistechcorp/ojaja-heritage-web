@@ -120,6 +120,40 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
           closingStatement: "Ojaja Bitters – Feel the power of tradition. Sip into natural wellness."
         };
 
+      case "Whisky Cola":
+        return {
+          tagline: "Smooth Heat. Cola Cool. African Class.",
+          subtitle: "Where Tradition Meets Sophistication",
+          mainDescription: "Ojaja Whisky Cola is an elegant fusion of bold cola flavor and the smoky depth of premium whisky essence — designed for those who love a mature taste without the buzz. With every sip, you're embracing the smooth edge of African nightlife and royal flair.",
+          features: [
+            "Bold blend of cola & whisky essence",
+            "Available in cans and PET bottle"
+          ],
+          specialFeatures: [
+            {
+              icon: Star,
+              title: "Whisky Essence (Non-Alcoholic Option)",
+              description: "Rich, woody notes for that grown-up feel"
+            },
+            {
+              icon: Zap,
+              title: "Classic Cola Kick", 
+              description: "Carbonated and refreshing"
+            },
+            {
+              icon: Heart,
+              title: "Perfect for Social Settings",
+              description: "Without the side effects"
+            }
+          ],
+          perfectFor: [
+            "Dinner dates & celebrations",
+            "Stylish hangouts & sober sipping",
+            "Bold taste with a royal twist"
+          ],
+          closingStatement: "Ojaja Whisky Cola – Sophisticated sips, African soul."
+        };
+
       default:
         return {
           tagline: "Premium African Beverage",
