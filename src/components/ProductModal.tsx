@@ -357,7 +357,7 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8 justify-center">
               <Button className="bg-ojaja-orange hover:bg-ojaja-pink text-white px-6 sm:px-8">
-                Order Now
+                Become a Distributor
               </Button>
               <Button variant="outline" className="border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-6 sm:px-8">
                 Find Distributors
