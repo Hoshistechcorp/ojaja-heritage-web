@@ -4,6 +4,7 @@ import heroImage from "@/assets/hero-image.jpg";
 import splashImage from "@/assets/splash-drinks.jpg";
 import BackgroundRemovedImage from "@/components/BackgroundRemovedImage";
 import VideoModal from "@/components/VideoModal";
+import DistributorForm from "@/components/DistributorForm";
 import storyThumbnail from "@/assets/story-video-thumbnail.jpg";
 
 const HeroSection = () => {
@@ -52,13 +53,15 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-ojaja-orange to-ojaja-pink hover:shadow-elegant text-white font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full group"
-              >
-                <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-bounce" />
-                Become a Distributor
-              </Button>
+              <DistributorForm>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-ojaja-orange to-ojaja-pink hover:shadow-elegant text-white font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full group"
+                >
+                  <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-bounce" />
+                  Become a Distributor
+                </Button>
+              </DistributorForm>
               <VideoModal
                 videoUrl="https://drive.google.com/file/d/1VwsboDByEuY5he4qo9LjndVsPPb2ODhc/preview"
                 thumbnailUrl={storyThumbnail}
