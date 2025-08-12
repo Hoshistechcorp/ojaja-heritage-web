@@ -21,7 +21,7 @@ const ProductsSection = () => {
       description: "Classic fizz with kola nut twist",
       benefits: ["Antioxidants", "Natural Caffeine", "African Heritage"],
       comingSoon: false,
-      image: colaImage,
+      image: "/lovable-uploads/823746ee-dad2-41f5-aaff-4ef7447c1d1d.png",
       color: "bg-gradient-to-br from-amber-100 to-amber-200",
       rating: 4.8
     },
@@ -30,7 +30,7 @@ const ProductsSection = () => {
       description: "Herbal detox rooted in tradition",
       benefits: ["Digestive Aid", "Liver Support", "Herbal Blend"],
       comingSoon: false,
-      image: bittersImage,
+      image: "/lovable-uploads/af0ad8a4-66bb-45b1-97d4-46ec3cb6c4b5.png",
       color: "bg-gradient-to-br from-green-100 to-green-200",
       rating: 4.9
     },
@@ -39,7 +39,7 @@ const ProductsSection = () => {
       description: "Immune-boosting golden elixir",
       benefits: ["Anti-inflammatory", "Vitamin C", "Natural Honey"],
       comingSoon: false,
-      image: gingerHoneyImage,
+      image: "/lovable-uploads/9254d752-fb4e-4bea-a226-eb2a09bb34b4.png",
       color: "bg-gradient-to-br from-yellow-100 to-orange-200",
       rating: 4.7
     },
@@ -48,7 +48,7 @@ const ProductsSection = () => {
       description: "Non-alcoholic sophistication",
       benefits: ["Rich Flavor", "Zero Alcohol", "Premium Taste"],
       comingSoon: false,
-      image: whiskyColaImage,
+      image: "/lovable-uploads/742340d1-5ead-490f-bd42-cc55b77d0bfd.png",
       color: "bg-gradient-to-br from-amber-200 to-brown-200",
       rating: 4.6
     },
@@ -57,7 +57,7 @@ const ProductsSection = () => {
       description: "Spicy-smooth celebration",
       benefits: ["Ginger Heat", "Smooth Finish", "Social Drink"],
       comingSoon: false,
-      image: gingerVodkaImage,
+      image: "/lovable-uploads/5f0d4b5f-9de3-45c7-99c5-fb8b3c0c8f4b.png",
       color: "bg-gradient-to-br from-blue-100 to-blue-200",
       rating: 4.5
     },
@@ -66,7 +66,7 @@ const ProductsSection = () => {
       description: "Vitamin-rich African citrus",
       benefits: ["Vitamin C", "Fresh Citrus", "Natural Fruit"],
       comingSoon: false,
-      image: orangeImage,
+      image: "/lovable-uploads/4328b44e-d0a1-49e2-bc79-1797577599ca.png",
       color: "bg-gradient-to-br from-orange-100 to-orange-300",
       rating: 4.8
     },
