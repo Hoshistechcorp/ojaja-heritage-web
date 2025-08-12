@@ -188,6 +188,40 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
           closingStatement: "Ojaja Ginger Lemon Honey – Sip your way to stronger days."
         };
 
+      case "Ginger Vodka":
+        return {
+          tagline: "Spicy. Bold. Unforgettable.",
+          subtitle: "Feel the Fire, Embrace the Chill",
+          mainDescription: "Ojaja Ginger Vodka is a fiery fusion of sharp ginger heat and smooth vodka essence. Whether you're looking to energize a night out or shake things up, this bold drink is made for fearless taste buds and confident vibes.",
+          features: [
+            "Spicy and smooth for sophisticated tastes",
+            "Available in PET bottle & can"
+          ],
+          specialFeatures: [
+            {
+              icon: Zap,
+              title: "Ginger Extract",
+              description: "Naturally stimulating and metabolism-friendly"
+            },
+            {
+              icon: Star,
+              title: "Vodka Flavour", 
+              description: "Chill and sophisticated finish (alcoholic & non-alcoholic variants)"
+            },
+            {
+              icon: Sparkles,
+              title: "Crafted for Nightlife",
+              description: "Parties, and personal power"
+            }
+          ],
+          perfectFor: [
+            "Adventurous palates",
+            "Cocktails and mixers",
+            "Late-night energy & good vibes"
+          ],
+          closingStatement: "Ojaja Ginger Vodka – Spice your sip. Rule your vibe."
+        };
+
       default:
         return {
           tagline: "Premium African Beverage",
@@ -226,20 +260,20 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0 mx-4">
         <div className="relative">
           {/* Hero Section */}
-          <div className="relative h-64 bg-gradient-to-r from-ojaja-orange to-ojaja-pink overflow-hidden">
+          <div className="relative h-48 sm:h-64 bg-gradient-to-r from-ojaja-orange to-ojaja-pink overflow-hidden">
             <div className="absolute inset-0 bg-black/20"></div>
             <img 
               src={product.image}
               alt={product.name}
-              className="absolute right-8 top-1/2 transform -translate-y-1/2 h-48 w-auto object-contain drop-shadow-2xl"
+              className="absolute right-4 sm:right-8 top-1/2 transform -translate-y-1/2 h-32 sm:h-48 w-auto object-contain drop-shadow-2xl"
             />
-            <div className="relative z-10 p-8 text-white">
-              <h1 className="font-heading font-bold text-4xl mb-2">{content.tagline}</h1>
-              <h2 className="text-2xl font-semibold mb-4">{content.subtitle}</h2>
-              <h3 className="text-xl">{product.name}</h3>
+            <div className="relative z-10 p-4 sm:p-8 text-white">
+              <h1 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl mb-2">{content.tagline}</h1>
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4">{content.subtitle}</h2>
+              <h3 className="text-base sm:text-lg lg:text-xl">{product.name}</h3>
               {product.rating && (
                 <div className="flex items-center mt-4">
                   <Star className="w-5 h-5 text-yellow-300 fill-current mr-1" />
@@ -251,10 +285,10 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
           </div>
 
           {/* Content Section */}
-          <div className="p-8">
+          <div className="p-4 sm:p-6 lg:p-8">
             {/* Main Description */}
             <div className="mb-8">
-              <p className="text-lg text-foreground leading-relaxed mb-6">
+              <p className="text-base sm:text-lg text-foreground leading-relaxed mb-6">
                 {content.mainDescription}
               </p>
               
@@ -270,10 +304,10 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
 
             {/* What Makes It Special */}
             <div className="mb-8">
-              <h3 className="font-heading font-bold text-2xl text-ojaja-pink mb-6">
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-ojaja-pink mb-6">
                 What Makes It Special?
               </h3>
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {content.specialFeatures.map((feature, index) => (
                   <div key={index} className="text-center p-4 bg-ojaja-light rounded-xl">
                     <feature.icon className="w-8 h-8 text-ojaja-blue mx-auto mb-3" />
@@ -286,7 +320,7 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
 
             {/* Health Benefits */}
             <div className="mb-8">
-              <h3 className="font-heading font-bold text-2xl text-ojaja-pink mb-4">
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-ojaja-pink mb-4">
                 Health Benefits
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -300,7 +334,7 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
 
             {/* Perfect For */}
             <div className="mb-8">
-              <h3 className="font-heading font-bold text-2xl text-ojaja-pink mb-4">
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-ojaja-pink mb-4">
                 Perfect For:
               </h3>
               <div className="space-y-3">
@@ -314,18 +348,18 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
             </div>
 
             {/* Closing Statement */}
-            <div className="bg-gradient-to-r from-ojaja-light to-white p-6 rounded-xl text-center">
-              <p className="text-lg font-semibold text-ojaja-blue italic">
+            <div className="bg-gradient-to-r from-ojaja-light to-white p-4 sm:p-6 rounded-xl text-center">
+              <p className="text-base sm:text-lg font-semibold text-ojaja-blue italic">
                 {content.closingStatement}
               </p>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-4 mt-8 justify-center">
-              <Button className="bg-ojaja-orange hover:bg-ojaja-pink text-white px-8">
+            <div className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-8 justify-center">
+              <Button className="bg-ojaja-orange hover:bg-ojaja-pink text-white px-6 sm:px-8">
                 Order Now
               </Button>
-              <Button variant="outline" className="border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-8">
+              <Button variant="outline" className="border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-6 sm:px-8">
                 Find Distributors
               </Button>
             </div>

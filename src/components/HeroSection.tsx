@@ -25,10 +25,10 @@ const HeroSection = () => {
       <div className="absolute bottom-32 left-10 w-24 h-24 rounded-full bg-ojaja-blue/15 animate-bounce"></div>
       <div className="absolute top-1/3 right-1/4 w-6 h-6 bg-ojaja-green/30 rounded-full animate-ping"></div>
 
-      <div className="relative z-10 container mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[85vh]">
           {/* Left Content */}
-          <div className="space-y-8 animate-fade-in">
+          <div className="space-y-6 sm:space-y-8 animate-fade-in text-center lg:text-left">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-ojaja-blue/10 text-ojaja-blue px-4 py-2 rounded-full text-sm font-medium">
               <Star className="w-4 h-4 fill-current" />
@@ -36,7 +36,7 @@ const HeroSection = () => {
             </div>
             
             {/* Main Heading */}
-            <h1 className="font-heading font-bold text-6xl md:text-7xl lg:text-8xl text-foreground leading-[0.9]">
+            <h1 className="font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-foreground leading-[0.9]">
               Taste the
               <span className="block text-transparent bg-gradient-to-r from-ojaja-orange to-ojaja-pink bg-clip-text">
                 Authentic
@@ -45,18 +45,18 @@ const HeroSection = () => {
             </h1>
             
             {/* Subheading */}
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
               Experience the rich flavors and wellness benefits of traditional African beverages, 
               crafted with pure ingredients and centuries-old recipes.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-ojaja-orange to-ojaja-pink hover:shadow-elegant text-white font-semibold px-8 py-6 text-lg rounded-full group"
+                className="bg-gradient-to-r from-ojaja-orange to-ojaja-pink hover:shadow-elegant text-white font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full group"
               >
-                <ShoppingCart className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-bounce" />
                 Become a Distributor
               </Button>
               <VideoModal
@@ -66,23 +66,23 @@ const HeroSection = () => {
                 buttonText="Watch Our Story"
                 buttonVariant="outline"
                 buttonSize="lg"
-                buttonClassName="border-2 border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-8 py-6 text-lg rounded-full group"
+                buttonClassName="border-2 border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full group"
               />
             </div>
 
             {/* Stats */}
-            <div className="flex gap-8 pt-8">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-8 pt-6 sm:pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-ojaja-orange">50K+</div>
-                <div className="text-sm text-muted-foreground">Happy Customers</div>
+                <div className="text-2xl sm:text-3xl font-bold text-ojaja-orange">50K+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Happy Customers</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-ojaja-blue">100%</div>
-                <div className="text-sm text-muted-foreground">Natural Ingredients</div>
+                <div className="text-2xl sm:text-3xl font-bold text-ojaja-blue">100%</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Natural Ingredients</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-ojaja-green">25+</div>
-                <div className="text-sm text-muted-foreground">Premium Flavors</div>
+                <div className="text-2xl sm:text-3xl font-bold text-ojaja-green">25+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Premium Flavors</div>
               </div>
             </div>
           </div>
