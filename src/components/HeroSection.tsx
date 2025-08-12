@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Play, ShoppingCart, Star, ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 import splashImage from "@/assets/splash-drinks.jpg";
+import BackgroundRemovedImage from "@/components/BackgroundRemovedImage";
 
 const HeroSection = () => {
   return (
@@ -86,12 +87,13 @@ const HeroSection = () => {
           {/* Right Content - Dynamic Product Showcase */}
           <div className="relative animate-scale-in">
             <div className="relative">
-              {/* Main product image */}
+              {/* Main product image with background removal */}
               <div className="relative z-10">
-                <img 
-                  src={splashImage}
-                  alt="Ojaja Drinks Splash"
+                <BackgroundRemovedImage
+                  originalImageUrl="/lovable-uploads/77e69c63-3213-498c-b836-065ec1f894ab.png"
+                  alt="Ojaja Premium Product Collection"
                   className="w-full max-w-xl h-auto object-contain drop-shadow-2xl"
+                  fallbackSrc={splashImage}
                 />
               </div>
               
