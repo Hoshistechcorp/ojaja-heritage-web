@@ -45,14 +45,14 @@ All colors MUST be HSL.
     --ojaja-light: 210 40% 98%;
 
     /* Gradients */
-    --gradient-african: linear-gradient(135deg, hsl(var(--african-green)), hsl(var(--royal-gold)));
-    --gradient-warm: linear-gradient(180deg, hsl(var(--cream)), hsl(48 20% 90%));
-    --gradient-heritage: linear-gradient(45deg, hsl(var(--african-green)), hsl(var(--terracotta)));
+    --gradient-ojaja: linear-gradient(135deg, hsl(var(--ojaja-pink)), hsl(var(--ojaja-orange)));
+    --gradient-fresh: linear-gradient(180deg, hsl(var(--ojaja-green)), hsl(var(--ojaja-blue)));
+    --gradient-heritage: linear-gradient(45deg, hsl(var(--ojaja-blue)), hsl(var(--ojaja-green)));
 
     /* Shadows */
-    --shadow-african: 0 10px 30px -10px hsl(var(--african-green) / 0.3);
-    --shadow-gold: 0 4px 20px hsl(var(--royal-gold) / 0.4);
-    --shadow-warm: 0 8px 25px -8px hsl(15 25% 15% / 0.15);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--ojaja-pink) / 0.3);
+    --shadow-blue: 0 4px 20px hsl(var(--ojaja-blue) / 0.4);
+    --shadow-soft: 0 8px 25px -8px hsl(220 13% 18% / 0.15);
 
     --radius: 0.5rem;
 

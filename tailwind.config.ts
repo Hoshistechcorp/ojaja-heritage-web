@@ -74,7 +74,7 @@ export default {
 				'gradient-fresh': 'linear-gradient(45deg, hsl(var(--ojaja-green)), hsl(var(--ojaja-blue)))'
 			},
 			boxShadow: {
-				'ojaja': '0 10px 30px -10px hsl(var(--ojaja-pink) / 0.3)',
+				'elegant': '0 10px 30px -10px hsl(var(--ojaja-pink) / 0.3)',
 				'blue': '0 4px 20px hsl(var(--ojaja-blue) / 0.4)',
 				'soft': '0 8px 25px -8px hsl(220 13% 18% / 0.15)'
 			},
