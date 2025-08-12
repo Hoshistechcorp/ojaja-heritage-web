@@ -90,7 +90,7 @@ const HeroSection = () => {
               {/* Main product image with background removal */}
               <div className="relative z-10">
                 <BackgroundRemovedImage
-                  originalImageUrl="/lovable-uploads/77e69c63-3213-498c-b836-065ec1f894ab.png"
+                  originalImageUrl="/lovable-uploads/59d04be7-f5aa-4c4f-b088-ab042f87de15.png"
                   alt="Ojaja Premium Product Collection"
                   className="w-full max-w-xl h-auto object-contain drop-shadow-2xl"
                   fallbackSrc={splashImage}

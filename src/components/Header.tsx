@@ -8,7 +8,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-3xl font-bold text-ojaja-pink">OJAJA</div>
+            <img 
+              src="/lovable-uploads/a40c09f8-c677-40fa-898f-7d8ea03a741c.png" 
+              alt="Ojaja Drinks Logo" 
+              className="h-12 w-auto"
+            />
           </div>
 
           {/* Contact Info */}
