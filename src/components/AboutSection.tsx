@@ -19,7 +19,7 @@ const AboutSection = () => {
         {/* Family Lifestyle Image */}
         <div className="mb-16">
           <img 
-            src={familyImage} 
+            src="/lovable-uploads/abee8131-64cb-4430-b87e-84d08f0b8e93.png" 
             alt="Happy African family enjoying Ojaja drinks" 
             className="w-full max-w-4xl mx-auto rounded-3xl shadow-ojaja"
           />
