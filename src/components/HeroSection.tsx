@@ -87,13 +87,12 @@ const HeroSection = () => {
           {/* Right Content - Dynamic Product Showcase */}
           <div className="relative animate-scale-in">
             <div className="relative">
-              {/* Main product image with background removal */}
+              {/* Main product image */}
               <div className="relative z-10">
-                <BackgroundRemovedImage
-                  originalImageUrl="/lovable-uploads/59d04be7-f5aa-4c4f-b088-ab042f87de15.png"
+                <img 
+                  src="/lovable-uploads/e516963e-bf33-4152-a947-06e80de22c3d.png"
                   alt="Ojaja Premium Product Collection"
                   className="w-full max-w-xl h-auto object-contain drop-shadow-2xl"
-                  fallbackSrc={splashImage}
                 />
               </div>
               
