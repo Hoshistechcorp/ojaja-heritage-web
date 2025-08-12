@@ -87,6 +87,39 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
           closingStatement: "Ojaja Orange – Bright, Bold, and Proudly African."
         };
 
+      case "Ojaja Bitters":
+        return {
+          tagline: "Bold Taste. Deep Healing. Purely African.",
+          subtitle: "From Ancestral Wisdom to Modern Wellness",
+          mainDescription: "Ojaja Bitters is more than just a drink — it's a power-packed herbal elixir crafted with time-tested African botanicals. It strengthens the core and restores inner balance — naturally enhancing performance and confidence without chemicals or side effects, every sip connects you to generations of natural healing.",
+          features: [
+            "Premium herbal wellness drink",
+            "Available in PET bottle & can"
+          ],
+          specialFeatures: [
+            {
+              icon: Heart,
+              title: "Natural Herbs & Extracts",
+              description: "Cleanse the body naturally, boost digestion and immunity"
+            },
+            {
+              icon: Sparkles,
+              title: "Zero Artificial Sweeteners", 
+              description: "100% plant-based potency"
+            },
+            {
+              icon: Zap,
+              title: "Hormonal Balance & Stamina",
+              description: "Supports hormonal balance and enhances sexual stamina & recovery"
+            }
+          ],
+          perfectFor: [
+            "Wellness-conscious consumers",
+            "Adults embracing herbal wellness for total body performance"
+          ],
+          closingStatement: "Ojaja Bitters – Feel the power of tradition. Sip into natural wellness."
+        };
+
       default:
         return {
           tagline: "Premium African Beverage",
