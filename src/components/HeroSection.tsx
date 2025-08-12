@@ -3,6 +3,8 @@ import { Play, ShoppingCart, Star, ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 import splashImage from "@/assets/splash-drinks.jpg";
 import BackgroundRemovedImage from "@/components/BackgroundRemovedImage";
+import VideoModal from "@/components/VideoModal";
+import storyThumbnail from "@/assets/story-video-thumbnail.jpg";
 
 const HeroSection = () => {
   return (
@@ -57,14 +59,15 @@ const HeroSection = () => {
                 <ShoppingCart className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                 Shop Collection
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-8 py-6 text-lg rounded-full group"
-              >
-                <Play className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                Watch Our Story
-              </Button>
+              <VideoModal
+                videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" // Replace with actual video URL
+                thumbnailUrl={storyThumbnail}
+                title="Ojaja Drinks - Our Story"
+                buttonText="Watch Our Story"
+                buttonVariant="outline"
+                buttonSize="lg"
+                buttonClassName="border-2 border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-8 py-6 text-lg rounded-full group"
+              />
             </div>
 
             {/* Stats */}
