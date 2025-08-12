@@ -98,15 +98,15 @@ const ProductsSection = () => {
           <div className="grid lg:grid-cols-2 gap-8 mb-16">
             <div>
               <img 
-                src={productsImage} 
-                alt="Ojaja Drinks Product Collection" 
+                src="/lovable-uploads/d19209c7-1b42-41ac-ba68-cb90eb379fe2.png" 
+                alt="Ojaja Orange Drink Collection - Multiple Angles" 
                 className="w-full h-[300px] object-cover rounded-2xl shadow-soft"
               />
             </div>
             <div>
               <img 
-                src={splashImage} 
-                alt="Dynamic beverage splash photography" 
+                src="/lovable-uploads/0896e38e-29ca-405b-b224-8ff397b7cdeb.png" 
+                alt="Ojaja Whisky Cola Collection - Premium Packaging" 
                 className="w-full h-[300px] object-cover rounded-2xl shadow-soft"
               />
             </div>
