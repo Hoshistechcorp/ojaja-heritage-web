@@ -154,6 +154,40 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
           closingStatement: "Ojaja Whisky Cola – Sophisticated sips, African soul."
         };
 
+      case "Ginger Lemon Honey":
+        return {
+          tagline: "Golden Wellness in a Bottle.",
+          subtitle: "Refresh, Recharge, Rejuvenate",
+          mainDescription: "Ojaja Ginger Lemon Honey is the drink your body will thank you for. A masterfully balanced blend of three powerful African ingredients, it delivers a soothing taste with immune-boosting strength — perfect for daily wellness or when you need a natural pick-me-up.",
+          features: [
+            "Immune-boosting combo drink",
+            "Available in PET bottle & can"
+          ],
+          specialFeatures: [
+            {
+              icon: Zap,
+              title: "Fresh Ginger",
+              description: "Stimulates digestion and fights inflammation"
+            },
+            {
+              icon: Star,
+              title: "Zesty Lemon", 
+              description: "High in Vitamin C for immune support"
+            },
+            {
+              icon: Heart,
+              title: "Raw Honey",
+              description: "Natural sweetness + antioxidant power"
+            }
+          ],
+          perfectFor: [
+            "Immune system boost",
+            "Cold mornings or throat relief",
+            "Refreshment with real wellness benefits"
+          ],
+          closingStatement: "Ojaja Ginger Lemon Honey – Sip your way to stronger days."
+        };
+
       default:
         return {
           tagline: "Premium African Beverage",
