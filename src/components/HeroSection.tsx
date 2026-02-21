@@ -90,7 +90,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Dynamic Product Showcase */}
-          <div className="relative animate-scale-in">
+          <div className="relative animate-scale-in -mt-8 lg:-mt-16">
             <div className="relative">
               {/* Hero video */}
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-elegant">
