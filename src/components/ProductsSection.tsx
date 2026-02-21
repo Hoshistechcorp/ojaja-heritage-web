@@ -22,7 +22,7 @@ const ProductsSection = () => {
       description: "Classic fizz with kola nut twist",
       benefits: ["Antioxidants", "Natural Caffeine", "African Heritage"],
       comingSoon: false,
-      image: "/lovable-uploads/823746ee-dad2-41f5-aaff-4ef7447c1d1d.png",
+      image: "/lovable-uploads/ojaja-cola-bottle.jpeg",
       color: "bg-gradient-to-br from-amber-100 to-amber-200",
       rating: 4.8
     },
