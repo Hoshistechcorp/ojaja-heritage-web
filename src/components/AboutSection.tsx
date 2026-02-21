@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { MapPin, Mail, Building } from "lucide-react";
-import blinkLaunchImage from "@/assets/blink-launch.jpg";
+import productsLineupImage from "@/assets/ojaja-products-lineup.png";
 import heritageImage from "@/assets/african-heritage.jpg";
 
 const AboutSection = () => {
@@ -19,7 +19,7 @@ const AboutSection = () => {
         {/* Family Lifestyle Image */}
         <div className="mb-16">
           <img 
-            src={blinkLaunchImage} 
+            src={productsLineupImage} 
             alt="Ojaja Orange and Cola - Don't Blink, You Just Might Miss The Launch"
             className="w-full max-w-4xl mx-auto rounded-3xl shadow-ojaja"
           />
