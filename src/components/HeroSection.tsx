@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Play, ShoppingCart, Star, ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
-import splashImage from "@/assets/splash-drinks.jpg";
-import BackgroundRemovedImage from "@/components/BackgroundRemovedImage";
+import heroVideo from "@/assets/ojaja-hero-video.mp4";
 import VideoModal from "@/components/VideoModal";
 import DistributorForm from "@/components/DistributorForm";
 import storyThumbnail from "@/assets/story-video-thumbnail.jpg";
@@ -93,26 +92,21 @@ const HeroSection = () => {
           {/* Right Content - Dynamic Product Showcase */}
           <div className="relative animate-scale-in">
             <div className="relative">
-              {/* Main product image */}
-              <div className="relative z-10">
-                <img 
-                  src="/lovable-uploads/e516963e-bf33-4152-a947-06e80de22c3d.png"
-                  alt="Ojaja Premium Product Collection"
-                  className="w-full max-w-xl h-auto object-contain drop-shadow-2xl"
+              {/* Hero video */}
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-elegant">
+                <video 
+                  src={heroVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full max-w-xl h-auto object-cover rounded-2xl"
                 />
               </div>
               
-              {/* Floating product elements */}
-              <div className="absolute -top-8 -left-8 w-20 h-20 bg-gradient-to-br from-ojaja-orange to-ojaja-pink rounded-full flex items-center justify-center animate-float">
-                <span className="text-white font-bold text-sm">NEW</span>
-              </div>
-              
+              {/* Floating accent elements */}
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-ojaja-blue to-ojaja-green rounded-full opacity-80 animate-pulse"></div>
-              
-              {/* Animated elements */}
-              <div className="absolute top-1/4 -left-4 w-3 h-3 bg-ojaja-orange rounded-full animate-ping"></div>
-              <div className="absolute bottom-1/3 -right-4 w-2 h-2 bg-ojaja-blue rounded-full animate-bounce"></div>
-              <div className="absolute top-1/2 -left-6 w-4 h-4 bg-ojaja-green/50 rounded-full animate-pulse"></div>
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-ojaja-orange to-ojaja-pink rounded-full opacity-60 animate-bounce"></div>
             </div>
           </div>
         </div>
