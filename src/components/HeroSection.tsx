@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Play, ShoppingCart, Star, ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
-import heroVideo from "@/assets/ojaja-hero-video.mp4";
-import VideoModal from "@/components/VideoModal";
+import productsHero from "@/assets/ojaja-products-hero.jpeg";
 import DistributorForm from "@/components/DistributorForm";
-import storyThumbnail from "@/assets/story-video-thumbnail.jpg";
 
 const HeroSection = () => {
   return (
@@ -61,15 +59,20 @@ const HeroSection = () => {
                   Become a Distributor
                 </Button>
               </DistributorForm>
-              <VideoModal
-                videoUrl="https://drive.google.com/file/d/1VwsboDByEuY5he4qo9LjndVsPPb2ODhc/preview"
-                thumbnailUrl={storyThumbnail}
-                title="Ojaja Drinks - Our Story"
-                buttonText="Watch Our Story"
-                buttonVariant="outline"
-                buttonSize="lg"
-                buttonClassName="border-2 border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full group"
-              />
+              <a
+                href="https://drive.google.com/file/d/1VwsboDByEuY5he4qo9LjndVsPPb2ODhc/preview"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full group"
+                >
+                  <Play className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                  Watch Our Story
+                </Button>
+              </a>
             </div>
 
             {/* Stats */}
@@ -92,14 +95,11 @@ const HeroSection = () => {
           {/* Right Content - Dynamic Product Showcase */}
           <div className="relative animate-scale-in -mt-8 lg:-mt-16">
             <div className="relative">
-              {/* Hero video */}
+              {/* Hero product image */}
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-elegant">
-                <video 
-                  src={heroVideo}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <img 
+                  src={productsHero}
+                  alt="Ojaja Drinks Product Lineup"
                   className="w-full max-w-xl h-auto object-cover rounded-2xl"
                 />
               </div>
