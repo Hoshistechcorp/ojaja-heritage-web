@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Globe, Leaf, Star, Award, Heart } from "lucide-react";
 import patternBg from "@/assets/pattern-bg.jpg";
-import peopleImage from "@/assets/people-enjoying.jpg";
+import differenceImage from "@/assets/ojaja-difference.jpg";
 
 const DifferentiatorsSection = () => {
   const differentiators = [
@@ -80,8 +80,8 @@ const DifferentiatorsSection = () => {
             {/* Left - Fun Image */}
             <div className="animate-fade-in">
               <img 
-                src={peopleImage} 
-                alt="People enjoying Ojaja drinks" 
+                src={differenceImage} 
+                alt="Ojaja Drinks royal heritage event" 
                 className="w-full h-[300px] object-cover rounded-2xl shadow-ojaja"
               />
             </div>
