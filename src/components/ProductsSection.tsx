@@ -38,7 +38,7 @@ const ProductsSection = () => {
       description: "Immune-boosting golden elixir",
       benefits: ["Anti-inflammatory", "Vitamin C", "Natural Honey"],
       comingSoon: false,
-      image: "/lovable-uploads/9254d752-fb4e-4bea-a226-eb2a09bb34b4.png",
+      image: gingerHoneyImage,
       color: "bg-gradient-to-br from-yellow-100 to-orange-200",
     },
     {
