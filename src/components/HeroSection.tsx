@@ -1,21 +1,21 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Play, ShoppingCart, Star, ArrowDown, X } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import { ShoppingCart, Star, ArrowDown, Package } from "lucide-react";
 import productsHero from "@/assets/ojaja-products-hero.jpeg";
 import DistributorForm from "@/components/DistributorForm";
+import OrderForm from "@/components/OrderForm";
 
 const HeroSection = () => {
-  const [videoOpen, setVideoOpen] = useState(false);
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Background with overlay */}
+      {/* Background with video */}
       <div className="absolute inset-0">
-        <img 
-          src={heroImage} 
-          alt="Ojaja Drinks Hero Background"
+        <video
+          src="/videos/ojaja-story.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"></div>
@@ -54,24 +54,25 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-              <DistributorForm>
+              <OrderForm>
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-ojaja-orange to-ojaja-pink hover:shadow-elegant text-white font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full group"
                 >
-                  <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-bounce" />
+                  <Package className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-bounce" />
+                  Order Now
+                </Button>
+              </OrderForm>
+              <DistributorForm>
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full group"
+                >
+                  <ShoppingCart className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
                   Become a Distributor
                 </Button>
               </DistributorForm>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-2 border-ojaja-blue text-ojaja-blue hover:bg-ojaja-blue hover:text-white px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full group"
-                onClick={() => setVideoOpen(true)}
-              >
-                <Play className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                Watch Our Story
-              </Button>
             </div>
 
             {/* Stats */}
@@ -118,27 +119,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      {/* Video Modal */}
-      <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
-        <DialogContent className="max-w-4xl w-full p-0 bg-black border-0">
-          <div className="relative aspect-video w-full">
-            <button
-              onClick={() => setVideoOpen(false)}
-              className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            {videoOpen && (
-              <video
-                src="/videos/ojaja-story.mp4"
-                controls
-                autoPlay
-                className="w-full h-full rounded-lg"
-              />
-            )}
-          </div>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };

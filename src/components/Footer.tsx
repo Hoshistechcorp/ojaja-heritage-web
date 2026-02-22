@@ -21,9 +21,9 @@ const Footer = () => {
               <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ojaja-orange hover:text-white transition-all cursor-pointer">
                 <Twitter className="w-5 h-5" />
               </div>
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ojaja-orange hover:text-white transition-all cursor-pointer">
+              <a href="https://www.instagram.com/ojajadrinks?igsh=dmMza2c2dG5xNHU5" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ojaja-orange hover:text-white transition-all cursor-pointer">
                 <Instagram className="w-5 h-5" />
-              </div>
+              </a>
               <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ojaja-orange hover:text-white transition-all cursor-pointer">
                 <Linkedin className="w-5 h-5" />
               </div>
@@ -51,6 +51,14 @@ const Footer = () => {
                 <div>
                   <a href="mailto:info@ojajadrinks.com" className="hover:text-ojaja-orange transition-colors">
                     info@ojajadrinks.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <Mail className="w-5 h-5 text-ojaja-orange mr-3 mt-0.5" />
+                <div>
+                  <a href="mailto:ojajadrinks@gmail.com" className="hover:text-ojaja-orange transition-colors">
+                    ojajadrinks@gmail.com
                   </a>
                 </div>
               </div>
