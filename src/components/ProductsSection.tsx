@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Clock, Crown, Heart, Star } from "lucide-react";
+import { Sparkles, Clock, Crown, Heart } from "lucide-react";
 import ProductModal from "@/components/ProductModal";
 import productsImage from "@/assets/products-showcase.jpg";
 import splashImage from "@/assets/splash-drinks.jpg";
@@ -24,43 +24,6 @@ const ProductsSection = () => {
       comingSoon: false,
       image: colaImage,
       color: "bg-gradient-to-br from-amber-100 to-amber-200",
-      rating: 4.8
-    },
-    {
-      name: "Ojaja Bitters",
-      description: "Herbal detox rooted in tradition",
-      benefits: ["Digestive Aid", "Liver Support", "Herbal Blend"],
-      comingSoon: false,
-      image: "/lovable-uploads/af0ad8a4-66bb-45b1-97d4-46ec3cb6c4b5.png",
-      color: "bg-gradient-to-br from-green-100 to-green-200",
-      rating: 4.9
-    },
-    {
-      name: "Ginger Lemon Honey",
-      description: "Immune-boosting golden elixir",
-      benefits: ["Anti-inflammatory", "Vitamin C", "Natural Honey"],
-      comingSoon: false,
-      image: "/lovable-uploads/9254d752-fb4e-4bea-a226-eb2a09bb34b4.png",
-      color: "bg-gradient-to-br from-yellow-100 to-orange-200",
-      rating: 4.7
-    },
-    {
-      name: "Whisky Cola",
-      description: "Non-alcoholic sophistication",
-      benefits: ["Rich Flavor", "Zero Alcohol", "Premium Taste"],
-      comingSoon: false,
-      image: "/lovable-uploads/742340d1-5ead-490f-bd42-cc55b77d0bfd.png",
-      color: "bg-gradient-to-br from-amber-200 to-brown-200",
-      rating: 4.6
-    },
-    {
-      name: "Ginger Vodka",
-      description: "Spicy-smooth celebration",
-      benefits: ["Ginger Heat", "Smooth Finish", "Social Drink"],
-      comingSoon: false,
-      image: "/lovable-uploads/5f0d4b5f-9de3-45c7-99c5-fb8b3c0c8f4b.png",
-      color: "bg-gradient-to-br from-blue-100 to-blue-200",
-      rating: 4.5
     },
     {
       name: "Ojaja Orange",
@@ -69,7 +32,38 @@ const ProductsSection = () => {
       comingSoon: false,
       image: orangeImage,
       color: "bg-gradient-to-br from-orange-100 to-orange-300",
-      rating: 4.8
+    },
+    {
+      name: "Ginger Lemon Honey",
+      description: "Immune-boosting golden elixir",
+      benefits: ["Anti-inflammatory", "Vitamin C", "Natural Honey"],
+      comingSoon: false,
+      image: "/lovable-uploads/9254d752-fb4e-4bea-a226-eb2a09bb34b4.png",
+      color: "bg-gradient-to-br from-yellow-100 to-orange-200",
+    },
+    {
+      name: "Whisky Cola",
+      description: "Non-alcoholic sophistication",
+      benefits: ["Rich Flavor", "Zero Alcohol", "Premium Taste"],
+      comingSoon: false,
+      image: "/lovable-uploads/742340d1-5ead-490f-bd42-cc55b77d0bfd.png",
+      color: "bg-gradient-to-br from-amber-200 to-brown-200",
+    },
+    {
+      name: "Ginger Vodka",
+      description: "Spicy-smooth celebration",
+      benefits: ["Ginger Heat", "Smooth Finish", "Social Drink"],
+      comingSoon: false,
+      image: "/lovable-uploads/5f0d4b5f-9de3-45c7-99c5-fb8b3c0c8f4b.png",
+      color: "bg-gradient-to-br from-blue-100 to-blue-200",
+    },
+    {
+      name: "Ojaja Bitters",
+      description: "Herbal detox rooted in tradition",
+      benefits: ["Digestive Aid", "Liver Support", "Herbal Blend"],
+      comingSoon: false,
+      image: "/lovable-uploads/af0ad8a4-66bb-45b1-97d4-46ec3cb6c4b5.png",
+      color: "bg-gradient-to-br from-green-100 to-green-200",
     },
     {
       name: "Ojaja Water",
@@ -78,7 +72,6 @@ const ProductsSection = () => {
       comingSoon: true,
       image: waterImage,
       color: "bg-gradient-to-br from-blue-50 to-blue-100",
-      rating: null
     }
   ];
 
@@ -123,7 +116,7 @@ const ProductsSection = () => {
                 <img 
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 
                 {/* Badges */}
@@ -140,14 +133,6 @@ const ProductsSection = () => {
                       <Clock className="w-3 h-3 mr-1" />
                       Coming Soon
                     </Badge>
-                  </div>
-                )}
-
-                {/* Rating */}
-                {product.rating && (
-                  <div className="absolute bottom-3 left-3 flex items-center bg-white/90 rounded-full px-2 py-1">
-                    <Star className="w-3 h-3 text-yellow-500 fill-current mr-1" />
-                    <span className="text-xs font-semibold">{product.rating}</span>
                   </div>
                 )}
               </div>
