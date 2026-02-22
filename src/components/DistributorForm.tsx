@@ -1,3 +1,4 @@
+import { supabase } from "@/integrations/supabase/client";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -177,21 +178,26 @@ Products: ${data.products.join(", ")}
   const onSubmit = async (data: DistributorFormData) => {
     setIsSubmitting(true);
     try {
-      const subject = encodeURIComponent("Ojaja Drinks Distributor Application");
-      const body = encodeURIComponent(formatEmailBody(data));
-      window.location.href = `mailto:Adepoyigitobi@gmail.com?subject=${subject}&body=${body}`;
+      const response = await supabase.functions.invoke('send-distributor-email', {
+        body: data,
+      });
+
+      if (response.error) {
+        throw new Error(response.error.message);
+      }
 
       toast({
-        title: "Application Ready!",
-        description: "Your email client should open with the application details. Please send the email to complete your submission.",
+        title: "Application Submitted!",
+        description: "Your distributor application has been sent successfully. We'll get back to you soon!",
       });
 
       form.reset();
       setOpen(false);
     } catch (error) {
+      console.error('Error submitting form:', error);
       toast({
         title: "Submission Failed",
-        description: "There was an error preparing your application. Please try again.",
+        description: "There was an error sending your application. Please try again.",
         variant: "destructive",
       });
     } finally {
