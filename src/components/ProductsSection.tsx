@@ -22,7 +22,7 @@ const ProductsSection = () => {
       description: "Classic fizz with kola nut twist",
       benefits: ["Antioxidants", "Natural Caffeine", "African Heritage"],
       comingSoon: false,
-      image: "/lovable-uploads/ojaja-cola-bottle.jpeg",
+      image: colaImage,
       color: "bg-gradient-to-br from-amber-100 to-amber-200",
       rating: 4.8
     },
@@ -63,11 +63,11 @@ const ProductsSection = () => {
       rating: 4.5
     },
     {
-      name: "Orange",
+      name: "Ojaja Orange",
       description: "Vitamin-rich African citrus",
       benefits: ["Vitamin C", "Fresh Citrus", "Natural Fruit"],
       comingSoon: false,
-      image: "/lovable-uploads/4328b44e-d0a1-49e2-bc79-1797577599ca.png",
+      image: orangeImage,
       color: "bg-gradient-to-br from-orange-100 to-orange-300",
       rating: 4.8
     },
