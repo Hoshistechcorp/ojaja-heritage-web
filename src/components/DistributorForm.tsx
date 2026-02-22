@@ -13,16 +13,53 @@ import { useState } from "react";
 import { ShoppingCart, Building, Users, Truck, DollarSign } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+const countryStates: Record<string, string[]> = {
+  Nigeria: [
+    "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
+    "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT Abuja", "Gombe",
+    "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos",
+    "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto",
+    "Taraba", "Yobe", "Zamfara"
+  ],
+  Ghana: [
+    "Ashanti", "Bono", "Bono East", "Ahafo", "Central", "Eastern", "Greater Accra",
+    "North East", "Northern", "Oti", "Savannah", "Upper East", "Upper West", "Volta",
+    "Western", "Western North"
+  ],
+  Kenya: [
+    "Nairobi", "Mombasa", "Kisumu", "Nakuru", "Eldoret", "Kiambu", "Machakos",
+    "Uasin Gishu", "Kajiado", "Kilifi", "Nyeri", "Meru", "Laikipia"
+  ],
+  "South Africa": [
+    "Eastern Cape", "Free State", "Gauteng", "KwaZulu-Natal", "Limpopo",
+    "Mpumalanga", "North West", "Northern Cape", "Western Cape"
+  ],
+  "United Kingdom": [
+    "England", "Scotland", "Wales", "Northern Ireland"
+  ],
+  "United States": [
+    "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+    "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+    "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan",
+    "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire",
+    "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+    "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
+    "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia",
+    "Wisconsin", "Wyoming"
+  ],
+  Other: [],
+};
+
 const distributorSchema = z.object({
-  // Section 1: Personal / Company Details
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   companyName: z.string().min(2, "Company name must be at least 2 characters"),
   phone: z.string().min(10, "Please enter a valid phone number"),
   email: z.string().email("Please enter a valid email address"),
   businessAddress: z.string().min(5, "Please enter your business address"),
-  stateCountry: z.string().min(1, "Please select a state/country"),
+  country: z.string().min(1, "Please select a country"),
+  state: z.string().optional(),
+  city: z.string().min(1, "Please enter your city"),
 
-  // Section 2: Business Capacity
   yearsInDistribution: z.string().min(1, "Please select your experience"),
   currentlyDistributesBeverages: z.string().min(1, "Please select an option"),
   currentBrands: z.string().optional(),
@@ -30,20 +67,15 @@ const distributorSchema = z.object({
   hasWarehouse: z.string().min(1, "Please select an option"),
   warehouseSize: z.string().optional(),
 
-  // Section 3: Coverage & Logistics
   areasCovered: z.string().min(5, "Please describe the areas you can cover"),
   deliveryVehicles: z.string().min(1, "Please enter the number of vehicles"),
   hasSalesReps: z.string().min(1, "Please select an option"),
   salesRepsCount: z.string().optional(),
 
-  // Section 4: Financial Commitment
   canMeetMinimumOrder: z.string().min(1, "Please select an option"),
   distributorCategory: z.string().min(1, "Please select a category"),
 
-  // Existing fields
   products: z.array(z.string()).min(1, "Please select at least one product"),
-  targetMarket: z.string().min(10, "Please describe your target market"),
-  businessPlan: z.string().min(20, "Please provide details about your business plan"),
 });
 
 type DistributorFormData = z.infer<typeof distributorSchema>;
@@ -65,7 +97,9 @@ const DistributorForm = ({ children }: DistributorFormProps) => {
       phone: "",
       email: "",
       businessAddress: "",
-      stateCountry: "",
+      country: "",
+      state: "",
+      city: "",
       yearsInDistribution: "",
       currentlyDistributesBeverages: "",
       currentBrands: "",
@@ -79,10 +113,11 @@ const DistributorForm = ({ children }: DistributorFormProps) => {
       canMeetMinimumOrder: "",
       distributorCategory: "",
       products: [],
-      targetMarket: "",
-      businessPlan: "",
     },
   });
+
+  const selectedCountry = form.watch("country");
+  const statesForCountry = selectedCountry ? countryStates[selectedCountry] || [] : [];
 
   const products = [
     "Ojaja Cola",
@@ -112,7 +147,9 @@ Company Name: ${data.companyName}
 Phone Number: ${data.phone}
 Email Address: ${data.email}
 Business Address: ${data.businessAddress}
-State / Country: ${data.stateCountry}
+Country: ${data.country}
+State: ${data.state || "N/A"}
+City: ${data.city}
 
 --- SECTION 2: Business Capacity ---
 Years in Distribution: ${data.yearsInDistribution}
@@ -134,8 +171,6 @@ Preferred Distributor Category: ${data.distributorCategory}
 
 --- Product Interest ---
 Products: ${data.products.join(", ")}
-Target Market: ${data.targetMarket}
-Business Plan & Goals: ${data.businessPlan}
     `.trim();
   };
 
@@ -237,33 +272,59 @@ Business Plan & Goals: ${data.businessPlan}
                   </FormItem>
                 )} />
 
-                <FormField control={form.control} name="stateCountry" render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>State / Country *</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                      <FormControl>
-                        <SelectTrigger><SelectValue placeholder="Select state/country" /></SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="Lagos, Nigeria">Lagos, Nigeria</SelectItem>
-                        <SelectItem value="Abuja, Nigeria">Abuja, Nigeria</SelectItem>
-                        <SelectItem value="Rivers, Nigeria">Rivers, Nigeria</SelectItem>
-                        <SelectItem value="Kano, Nigeria">Kano, Nigeria</SelectItem>
-                        <SelectItem value="Oyo, Nigeria">Oyo, Nigeria</SelectItem>
-                        <SelectItem value="Enugu, Nigeria">Enugu, Nigeria</SelectItem>
-                        <SelectItem value="Delta, Nigeria">Delta, Nigeria</SelectItem>
-                        <SelectItem value="Kaduna, Nigeria">Kaduna, Nigeria</SelectItem>
-                        <SelectItem value="Ghana">Ghana</SelectItem>
-                        <SelectItem value="Kenya">Kenya</SelectItem>
-                        <SelectItem value="South Africa">South Africa</SelectItem>
-                        <SelectItem value="United Kingdom">United Kingdom</SelectItem>
-                        <SelectItem value="United States">United States</SelectItem>
-                        <SelectItem value="Other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )} />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <FormField control={form.control} name="country" render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Country *</FormLabel>
+                      <Select
+                        onValueChange={(value) => {
+                          field.onChange(value);
+                          form.setValue("state", "");
+                        }}
+                        defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger><SelectValue placeholder="Select country" /></SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {Object.keys(countryStates).map((country) => (
+                            <SelectItem key={country} value={country}>{country}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+
+                  <FormField control={form.control} name="state" render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>State / Region</FormLabel>
+                      {statesForCountry.length > 0 ? (
+                        <Select onValueChange={field.onChange} value={field.value}>
+                          <FormControl>
+                            <SelectTrigger><SelectValue placeholder="Select state" /></SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            {statesForCountry.map((state) => (
+                              <SelectItem key={state} value={state}>{state}</SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      ) : (
+                        <FormControl><Input placeholder="Enter state/region" {...field} /></FormControl>
+                      )}
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+
+                  <FormField control={form.control} name="city" render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>City *</FormLabel>
+                      <FormControl><Input placeholder="Enter your city" {...field} /></FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+                </div>
               </div>
 
               {/* SECTION 2: Business Capacity */}
@@ -454,11 +515,11 @@ Business Plan & Goals: ${data.businessPlan}
                 )} />
               </div>
 
-              {/* Product Interest (existing) */}
+              {/* Product Interest */}
               <div className="space-y-4">
                 <h3 className="font-semibold text-lg text-ojaja-pink flex items-center">
                   <ShoppingCart className="w-5 h-5 mr-2" />
-                  Product Interest & Business Plan
+                  Product Interest
                 </h3>
 
                 <FormField control={form.control} name="products" render={({ field }) => (
@@ -480,26 +541,6 @@ Business Plan & Goals: ${data.businessPlan}
                           </div>
                         ))}
                       </div>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )} />
-
-                <FormField control={form.control} name="targetMarket" render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Target Market *</FormLabel>
-                    <FormControl>
-                      <Textarea placeholder="Describe your target customers, market size, and distribution channels..." {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )} />
-
-                <FormField control={form.control} name="businessPlan" render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Business Plan & Goals *</FormLabel>
-                    <FormControl>
-                      <Textarea placeholder="Tell us about your business strategy, sales goals, and how you plan to promote Ojaja products..." {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
