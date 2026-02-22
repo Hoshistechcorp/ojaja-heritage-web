@@ -46,7 +46,7 @@ const ProductsSection = () => {
       description: "Non-alcoholic sophistication",
       benefits: ["Rich Flavor", "Zero Alcohol", "Premium Taste"],
       comingSoon: false,
-      image: "/lovable-uploads/742340d1-5ead-490f-bd42-cc55b77d0bfd.png",
+      image: whiskyColaImage,
       color: "bg-gradient-to-br from-amber-200 to-brown-200",
     },
     {
