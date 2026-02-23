@@ -125,15 +125,15 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
         return {
           tagline: "Smooth Heat. Cola Cool. African Class.",
           subtitle: "Where Tradition Meets Sophistication",
-          mainDescription: "Ojaja Whisky Cola is an elegant fusion of bold cola flavor and the smoky depth of premium whisky essence — designed for those who love a mature taste without the buzz. With every sip, you're embracing the smooth edge of African nightlife and royal flair.",
+          mainDescription: "Ojaja Whisky Cola is a bold fusion of rich cola flavor and smooth premium whisky — crafted for those who appreciate a mature, spirited taste. With 10% alcohol and every sip, you're embracing the smooth edge of African nightlife and royal flair.",
           features: [
-            "Bold blend of cola & whisky essence",
+            "Bold blend of cola & premium whisky — 10% ABV",
             "Available in cans and PET bottle"
           ],
           specialFeatures: [
             {
               icon: Star,
-              title: "Whisky Essence (Non-Alcoholic Option)",
+              title: "Premium Whisky Blend (10% ABV)",
               description: "Rich, woody notes for that grown-up feel"
             },
             {
@@ -144,12 +144,12 @@ const ProductModal = ({ product, children }: ProductModalProps) => {
             {
               icon: Heart,
               title: "Perfect for Social Settings",
-              description: "Without the side effects"
+              description: "A spirited drink for bold moments"
             }
           ],
           perfectFor: [
             "Dinner dates & celebrations",
-            "Stylish hangouts & sober sipping",
+            "Stylish hangouts & nightlife",
             "Bold taste with a royal twist"
           ],
           closingStatement: "Ojaja Whisky Cola – Sophisticated sips, African soul."
