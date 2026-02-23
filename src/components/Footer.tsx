@@ -1,4 +1,4 @@
-import { Crown, Mail, Globe, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Globe, Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -15,18 +15,15 @@ const Footer = () => {
               Rooted in royal heritage, crafted for wellness.
             </p>
             <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ojaja-orange hover:text-white transition-all cursor-pointer">
+              <a href="https://web.facebook.com/profile.php?id=61587098051226" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ojaja-orange hover:text-white transition-all cursor-pointer">
                 <Facebook className="w-5 h-5" />
-              </div>
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ojaja-orange hover:text-white transition-all cursor-pointer">
-                <Twitter className="w-5 h-5" />
-              </div>
+              </a>
+              <a href="https://x.com/ojajadrinks" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ojaja-orange hover:text-white transition-all cursor-pointer">
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
               <a href="https://www.instagram.com/ojajadrinks?igsh=dmMza2c2dG5xNHU5" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ojaja-orange hover:text-white transition-all cursor-pointer">
                 <Instagram className="w-5 h-5" />
               </a>
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-ojaja-orange hover:text-white transition-all cursor-pointer">
-                <Linkedin className="w-5 h-5" />
-              </div>
             </div>
           </div>
 
