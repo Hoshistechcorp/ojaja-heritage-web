@@ -19,8 +19,8 @@ const ProductsSection = () => {
   const products = [
     {
       name: "Ojaja Cola",
-      description: "Classic fizz with kola nut twist",
-      benefits: ["Antioxidants", "Natural Caffeine", "African Heritage"],
+      description: "Bold, refreshing cola with an authentic African kola nut kick",
+      benefits: ["Natural Caffeine", "Refreshing Taste", "African Heritage"],
       comingSoon: false,
       image: colaImage,
       color: "bg-gradient-to-br from-amber-100 to-amber-200",
@@ -43,8 +43,8 @@ const ProductsSection = () => {
     },
     {
       name: "Whisky Cola",
-      description: "Non-alcoholic sophistication",
-      benefits: ["Rich Flavor", "Zero Alcohol", "Premium Taste"],
+      description: "Premium whisky-infused cola with 10% alcohol",
+      benefits: ["Rich Flavor", "10% Alcohol", "Premium Taste"],
       comingSoon: true,
       image: whiskyColaImage,
       color: "bg-gradient-to-br from-amber-200 to-brown-200",
