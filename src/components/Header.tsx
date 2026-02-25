@@ -31,11 +31,11 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#home" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">HOME</a>
-            <a href="#about" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">ABOUT</a>
-            <a href="#products" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">PRODUCTS</a>
-            <a href="#ingredients" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">INGREDIENTS</a>
-            <a href="#contact" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CONTACT</a>
+            <a href="/#home" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">HOME</a>
+            <a href="/#about" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">ABOUT</a>
+            <a href="/#products" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">PRODUCTS</a>
+            <a href="/careers" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CAREERS</a>
+            <a href="/#contact" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CONTACT</a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -77,11 +77,11 @@ const Header = () => {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <nav className="lg:hidden pb-4 border-t border-border/50 pt-4 flex flex-col space-y-3">
-            <a href="#home" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">HOME</a>
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">ABOUT</a>
-            <a href="#products" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">PRODUCTS</a>
-            <a href="#ingredients" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">INGREDIENTS</a>
-            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CONTACT</a>
+            <a href="/#home" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">HOME</a>
+            <a href="/#about" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">ABOUT</a>
+            <a href="/#products" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">PRODUCTS</a>
+            <a href="/careers" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CAREERS</a>
+            <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CONTACT</a>
             <div className="flex items-center space-x-2 text-sm text-muted-foreground pt-2">
               <Phone className="h-4 w-4 text-ojaja-orange" />
               <div>

@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      career_applications: {
+        Row: {
+          created_at: string
+          cv_url: string | null
+          email: string
+          full_name: string
+          id: string
+          phone: string
+          preferred_department: string
+          years_of_experience: string
+        }
+        Insert: {
+          created_at?: string
+          cv_url?: string | null
+          email: string
+          full_name: string
+          id?: string
+          phone: string
+          preferred_department: string
+          years_of_experience: string
+        }
+        Update: {
+          created_at?: string
+          cv_url?: string | null
+          email?: string
+          full_name?: string
+          id?: string
+          phone?: string
+          preferred_department?: string
+          years_of_experience?: string
+        }
+        Relationships: []
+      }
       distributor_applications: {
         Row: {
           areas_covered: string | null
