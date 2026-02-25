@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -18,6 +19,40 @@ serve(async (req) => {
 
     const formData = await req.json();
 
+    // Save to database using service role
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+    const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    const { error: dbError } = await supabase.from('distributor_applications').insert({
+      full_name: formData.fullName,
+      company_name: formData.companyName,
+      phone: formData.phone,
+      email: formData.email,
+      business_address: formData.businessAddress,
+      country: formData.country,
+      state: formData.state || null,
+      city: formData.city,
+      years_in_distribution: formData.yearsInDistribution,
+      currently_distributes_beverages: formData.currentlyDistributesBeverages,
+      current_brands: formData.currentBrands || null,
+      monthly_sales_capacity: formData.monthlySalesCapacity,
+      has_warehouse: formData.hasWarehouse,
+      warehouse_size: formData.warehouseSize || null,
+      areas_covered: formData.areasCovered,
+      delivery_vehicles: formData.deliveryVehicles,
+      has_sales_reps: formData.hasSalesReps,
+      sales_reps_count: formData.salesRepsCount || null,
+      can_meet_minimum_order: formData.canMeetMinimumOrder,
+      distributor_category: formData.distributorCategory,
+      products: formData.products || [],
+    });
+
+    if (dbError) {
+      console.error('DB insert error:', dbError);
+    }
+
+    // Send email
     const htmlBody = `
       <h2>Ojaja Drinks Distributor Application</h2>
       
