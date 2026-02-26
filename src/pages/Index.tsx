@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import BannerAd from "@/components/BannerAd";
 import AboutSection from "@/components/AboutSection";
 import ValuesSection from "@/components/ValuesSection";
 import ProductsSection from "@/components/ProductsSection";
@@ -14,6 +15,7 @@ const Index = () => {
       <FloatingElements />
       <Header />
       <HeroSection />
+      <BannerAd />
       <AboutSection />
       <ValuesSection />
       <ProductsSection />
