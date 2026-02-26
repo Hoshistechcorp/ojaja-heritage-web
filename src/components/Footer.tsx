@@ -1,4 +1,4 @@
-import { Mail, Globe, Facebook, Instagram } from "lucide-react";
+import { Mail, Globe, Facebook, Instagram, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -53,11 +53,14 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start">
-                <Mail className="w-5 h-5 text-ojaja-orange mr-3 mt-0.5" />
+                <Phone className="w-5 h-5 text-ojaja-orange mr-3 mt-0.5" />
                 <div>
-                  <a href="mailto:ojajadrinks@gmail.com" className="hover:text-ojaja-orange transition-colors">
-                    ojajadrinks@gmail.com
-                  </a>
+                  <span className="block hover:text-ojaja-orange transition-colors">
+                    Smart Number: 0700OJAJAD
+                  </span>
+                  <span className="block hover:text-ojaja-orange transition-colors">
+                    STN DID: 02013449433
+                  </span>
                 </div>
               </div>
               <div className="flex items-start">

@@ -25,8 +25,8 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-2 text-sm text-muted-foreground">
             <Phone className="h-4 w-4 text-ojaja-orange" />
             <div>
-              <div className="font-medium">Get Free Delivery</div>
-              <div className="text-ojaja-pink font-semibold">+234-800-OJAJA</div>
+              <div className="font-medium">Call Us</div>
+              <div className="text-ojaja-pink font-semibold">0700OJAJAD</div>
             </div>
           </div>
 
@@ -86,8 +86,8 @@ const Header = () => {
             <div className="flex items-center space-x-2 text-sm text-muted-foreground pt-2">
               <Phone className="h-4 w-4 text-ojaja-orange" />
               <div>
-                <div className="font-medium">Get Free Delivery</div>
-                <div className="text-ojaja-pink font-semibold">+234-800-OJAJA</div>
+              <div className="font-medium">Call Us</div>
+                <div className="text-ojaja-pink font-semibold">0700OJAJAD</div>
               </div>
             </div>
           </nav>
