@@ -21,8 +21,6 @@ const products = [
   "Ojaja Water",
 ];
 
-const packSizes = ["6-pack", "12-pack", "24-pack", "48-pack"];
-
 const orderSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
   email: z.string().email("Valid email is required"),
@@ -36,7 +34,6 @@ type OrderFormData = z.infer<typeof orderSchema>;
 
 interface OrderItem {
   product: string;
-  packSize: string;
   quantity: number;
 }
 
@@ -48,7 +45,7 @@ const OrderForm = ({ children }: OrderFormProps) => {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderItems, setOrderItems] = useState<OrderItem[]>([
-    { product: products[0], packSize: packSizes[0], quantity: 1 },
+    { product: products[0], quantity: 10 },
   ]);
   const { toast } = useToast();
 
@@ -65,7 +62,7 @@ const OrderForm = ({ children }: OrderFormProps) => {
   });
 
   const addItem = () => {
-    setOrderItems([...orderItems, { product: products[0], packSize: packSizes[0], quantity: 1 }]);
+    setOrderItems([...orderItems, { product: products[0], quantity: 10 }]);
   };
 
   const removeItem = (index: number) => {
@@ -97,7 +94,7 @@ const OrderForm = ({ children }: OrderFormProps) => {
       });
 
       form.reset();
-      setOrderItems([{ product: products[0], packSize: packSizes[0], quantity: 1 }]);
+      setOrderItems([{ product: products[0], quantity: 10 }]);
       setOpen(false);
     } catch (error) {
       console.error('Error submitting order:', error);
@@ -124,7 +121,7 @@ const OrderForm = ({ children }: OrderFormProps) => {
               </h2>
             </div>
             <p className="text-muted-foreground text-sm">
-              Orders are available in packs only. Select your products and pack sizes below.
+              Minimum order is 10 packs per product. Select your products below.
             </p>
           </div>
 
@@ -146,24 +143,13 @@ const OrderForm = ({ children }: OrderFormProps) => {
                         </SelectContent>
                       </Select>
                     </div>
-                    <div className="w-32">
-                      <label className="text-sm font-medium mb-1 block">Pack Size</label>
-                      <Select value={item.packSize} onValueChange={(v) => updateItem(index, "packSize", v)}>
-                        <SelectTrigger><SelectValue /></SelectTrigger>
-                        <SelectContent>
-                          {packSizes.map((s) => (
-                            <SelectItem key={s} value={s}>{s}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="w-24">
-                      <label className="text-sm font-medium mb-1 block">Qty</label>
+                    <div className="w-28">
+                      <label className="text-sm font-medium mb-1 block">Qty (min 10)</label>
                       <Input
                         type="number"
-                        min={1}
+                        min={10}
                         value={item.quantity}
-                        onChange={(e) => updateItem(index, "quantity", parseInt(e.target.value) || 1)}
+                        onChange={(e) => updateItem(index, "quantity", Math.max(10, parseInt(e.target.value) || 10))}
                       />
                     </div>
                     {orderItems.length > 1 && (

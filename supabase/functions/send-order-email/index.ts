@@ -18,10 +18,9 @@ serve(async (req) => {
 
     const orderData = await req.json();
 
-    const itemsHtml = (orderData.items || []).map((item: { product: string; packSize: string; quantity: number }) =>
+    const itemsHtml = (orderData.items || []).map((item: { product: string; quantity: number }) =>
       `<tr>
         <td style="padding:8px;border:1px solid #ddd">${item.product}</td>
-        <td style="padding:8px;border:1px solid #ddd">${item.packSize}</td>
         <td style="padding:8px;border:1px solid #ddd">${item.quantity}</td>
       </tr>`
     ).join('');
@@ -43,8 +42,7 @@ serve(async (req) => {
       <table style="border-collapse:collapse;width:100%">
         <tr>
           <th style="padding:8px;border:1px solid #ddd;background:#f5f5f5">Product</th>
-          <th style="padding:8px;border:1px solid #ddd;background:#f5f5f5">Pack Size</th>
-          <th style="padding:8px;border:1px solid #ddd;background:#f5f5f5">Quantity</th>
+          <th style="padding:8px;border:1px solid #ddd;background:#f5f5f5">Quantity (Packs)</th>
         </tr>
         ${itemsHtml}
       </table>
