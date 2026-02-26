@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Play, Menu, X } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [videoOpen, setVideoOpen] = useState(false);
@@ -34,7 +35,7 @@ const Header = () => {
             <a href="/#home" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">HOME</a>
             <a href="/#about" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">ABOUT</a>
             <a href="/#products" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">PRODUCTS</a>
-            <a href="/careers" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CAREERS</a>
+            <Link to="/careers" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CAREERS</Link>
             <a href="/#contact" className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CONTACT</a>
           </nav>
 
@@ -80,7 +81,7 @@ const Header = () => {
             <a href="/#home" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">HOME</a>
             <a href="/#about" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">ABOUT</a>
             <a href="/#products" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">PRODUCTS</a>
-            <a href="/careers" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CAREERS</a>
+            <Link to="/careers" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CAREERS</Link>
             <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className="font-medium text-foreground hover:text-ojaja-pink transition-colors">CONTACT</a>
             <div className="flex items-center space-x-2 text-sm text-muted-foreground pt-2">
               <Phone className="h-4 w-4 text-ojaja-orange" />
