@@ -103,7 +103,7 @@ serve(async (req) => {
         'Authorization': `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Ojaja Drinks <onboarding@resend.dev>',
+        from: 'Ojaja Drinks <noreply@ojajadrinks.com>',
         to: ['partners@ojajadrinks.com'],
         subject: 'Ojaja Drinks Distributor Application',
         html: htmlBody,
