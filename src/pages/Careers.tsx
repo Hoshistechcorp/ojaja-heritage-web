@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import CareersHero from "@/components/careers/CareersHero";
 import CareersMission from "@/components/careers/CareersMission";
@@ -7,7 +8,7 @@ import CareersDepartments from "@/components/careers/CareersDepartments";
 import CareersOpenings from "@/components/careers/CareersOpenings";
 import CareersProcess from "@/components/careers/CareersProcess";
 import CareersGraduate from "@/components/careers/CareersGraduate";
-import CareersCVForm from "@/components/careers/CareersCVForm";
+const TALENT_POOL_URL = "https://forms.gle/UPFcVZdecBLqWELKA";
 
 const Careers = () => {
   return (
@@ -20,8 +21,16 @@ const Careers = () => {
       <CareersOpenings />
       <CareersProcess />
       <CareersGraduate />
-      <div id="submit-cv">
-        <CareersCVForm />
+      <div id="submit-cv" className="py-20 bg-background">
+        <div className="container mx-auto px-6 max-w-2xl text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">Submit Your CV</h2>
+          <p className="text-muted-foreground mb-10">If no current role matches your profile, submit your CV for future consideration.</p>
+          <a href={TALENT_POOL_URL} target="_blank" rel="noopener noreferrer">
+            <Button className="bg-gradient-ojaja text-primary-foreground rounded-full py-6 px-8 text-base font-semibold">
+              Join Ojaja Talent Pool
+            </Button>
+          </a>
+        </div>
       </div>
       <div className="bg-gradient-ojaja py-16 text-center">
         <div className="container mx-auto px-6">
