@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Star, ArrowDown, Package } from "lucide-react";
 import productsHero from "@/assets/ojaja-products-hero.jpeg";
-import DistributorForm from "@/components/DistributorForm";
-import OrderForm from "@/components/OrderForm";
+
+const DISTRIBUTOR_FORM_URL = "https://forms.gle/RntDk47yXxyytBjy9";
+const ORDER_FORM_URL = "https://forms.gle/wiq67ZftyQNr5DZb9";
 
 const HeroSection = () => {
 
@@ -51,7 +52,7 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-              <DistributorForm>
+              <a href={DISTRIBUTOR_FORM_URL} target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="lg" 
                   className="bg-gradient-to-r from-ojaja-orange to-ojaja-pink hover:shadow-elegant text-white font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-full group"
@@ -59,8 +60,8 @@ const HeroSection = () => {
                   <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:animate-bounce" />
                   Become a Distributor
                 </Button>
-              </DistributorForm>
-              <OrderForm>
+              </a>
+              <a href={ORDER_FORM_URL} target="_blank" rel="noopener noreferrer">
                 <Button 
                   variant="outline"
                   size="lg"
@@ -69,7 +70,7 @@ const HeroSection = () => {
                   <Package className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
                   Order Now
                 </Button>
-              </OrderForm>
+              </a>
             </div>
 
             {/* Stats */}
